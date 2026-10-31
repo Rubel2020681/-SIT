@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharafat Institute of Technology | SIT</title>
+
+<style>
+:root {
+    --primary: #123c69;
+    --secondary: #087e8b;
+    --accent: #f4a261;
+    --light: #f4f7fb;
+    --dark: #17202a;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 14px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span { color: var(--accent); }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover { color: var(--accent); }
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: 0;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 85px 7%;
+    color: white;
+    text-align: center;
+    background: linear-gradient(120deg, #123c69, #087e8b);
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto auto 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #17202a;
+    padding: 11px 22px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover { opacity: .88; }
+
+section {
+    padding: 55px 7%;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 14px #00000012;
+}
+
+.card h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.card p { margin-bottom: 15px; }
+
+.form-section {
+    max-width: 650px;
+    margin: auto;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 14px #00000012;
+}
+
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd3dc;
+    border-radius: 5px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+form button {
+    margin-top: 18px;
+    width: 100%;
+}
+
+.notice {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+#status {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 7%;
+}
+
+footer a {
+    color: var(--accent);
+    margin: 0 8px;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .menu-toggle { display: block; }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.open { display: flex; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">SHARAFAT <span>INSTITUTE</span></div>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">☰</button>
+
+        <nav id="mainNav">
+            <a href="#home">Home</a>
+            <a href="#elearning">E-Learning</a>
+            <a href="#ecommerce">E-Commerce</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#research">Research</a>
+            <a href="#earning">Earning</a>
+            <a href="#dfinance">DFinance</a>
+            <a href="#register">Registration</a>
+            <a href="#login">Login</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <h1>Sharafat Institute of Technology</h1>
+    <p>
+        Education, Technology, Research, Digital Commerce
+        and Financial Innovation — Connecting Knowledge
+        with Opportunity.
+    </p>
+    <a href="#elearning" class="btn">Explore Our Platform</a>
+</section>
+
+<section id="elearning">
+    <h2 class="section-title">E-Learning</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Online Courses</h3>
+            <p>Learn technology, business, accounting and digital skills.</p>
+            <a href="#register" class="btn">Join Course</a>
+        </div>
+        <div class="card">
+            <h3>Digital Classroom</h3>
+            <p>Access learning materials, lessons and educational videos.</p>
+            <a href="#register" class="btn">Start Learning</a>
+        </div>
+        <div class="card">
+            <h3>Student Resources</h3>
+            <p>Download notes, assignments and learning resources.</p>
+            <a href="#register" class="btn">View Resources</a>
+        </div>
+    </div>
+</section>
+
+<section id="ecommerce">
+    <h2 class="section-title">E-Commerce</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Digital Products</h3>
+            <p>Educational books, e-books, software and digital content.</p>
+            <a href="#payment" class="btn">Explore Products</a>
+        </div>
+        <div class="card">
+            <h3>Online Marketplace</h3>
+            <p>A platform for products and services.</p>
+            <a href="#payment" class="btn">Visit Marketplace</a>
+        </div>
+    </div>
+</section>
+
+<section id="blogs">
+    <h2 class="section-title">Blogs & Articles</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Technology</h3>
+            <p>Explore articles about software, AI and innovation.</p>
+        </div>
+        <div class="card">
+            <h3>Education</h3>
+            <p>Read educational articles and learning guides.</p>
+        </div>
+        <div class="card">
+            <h3>Business</h3>
+            <p>Discover business, entrepreneurship and finance ideas.</p>
+        </div>
+    </div>
+</section>
+
+<section id="research">
+    <h2 class="section-title">Research & Innovation</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Research Publications</h3>
+            <p>Explore research papers, reports and publications.</p>
+        </div>
+        <div class="card">
+            <h3>Innovation Projects</h3>
+            <p>Present technology projects and new ideas.</p>
+        </div>
+    </div>
+</section>
+
+<section id="earning">
+    <h2 class="section-title">E-Earning Opportunities</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Freelancing</h3>
+            <p>Learn how to develop skills and work online.</p>
+        </div>
+        <div class="card">
+            <h3>Affiliate Marketing</h3>
+            <p>Learn about referral marketing and online business.</p>
+        </div>
+        <div class="card">
+            <h3>Digital Entrepreneurship</h3>
+            <p>Develop and promote your own digital products.</p>
+        </div>
+    </div>
+</section>
+
+<section id="dfinance">
+    <h2 class="section-title">DFinance</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Financial Education</h3>
+            <p>Learn financial literacy, accounting and budgeting.</p>
+        </div>
+        <div class="card">
+            <h3>Digital Finance</h3>
+            <p>Explore digital payments and financial technology.</p>
+        </div>
+    </div>
+</section>
+
+<section id="register">
+    <h2 class="section-title">Student Registration</h2>
+    <div class="form-section">
+        <form id="registerForm">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" required>
+
+            <label>Choose Course</label>
+            <select name="course" required>
+                <option value="">Select a course</option>
+                <option>Web Development</option>
+                <option>Python Programming</option>
+                <option>Data Analysis</option>
+                <option>Digital Marketing</option>
+                <option>Accounting & Finance</option>
+            </select>
+
+            <label>Password</label>
+            <input type="password" name="password" minlength="8" required>
+
+            <button type="submit" class="btn">Register Now</button>
+        </form>
+    </div>
+</section>
+
+<section id="login">
+    <h2 class="section-title">Student Login</h2>
+    <div class="form-section">
+        <form id="loginForm">
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+</section>
+
+<section id="payment">
+    <h2 class="section-title">Online Payment</h2>
+    <div class="form-section">
+        <form id="paymentForm">
+            <label>Payment For</label>
+            <select name="purpose" required>
+                <option value="">Select purpose</option>
+                <option>Course Registration</option>
+                <option>E-Book Purchase</option>
+                <option>Other Service</option>
+            </select>
+
+            <label>Amount (BDT)</label>
+            <input type="number" name="amount"
+                   min="1" max="100000" required>
+
+            <button type="submit" class="btn">
+                Continue to Payment Demo
+            </button>
+            <p class="notice">
+                Demonstration only. No real payment will be collected.
+            </p>
+        </form>
+    </div>
+</section>
+
+<p id="status" role="status" aria-live="polite"></p>
+
+</main>
+
+<footer>
+    <h3>Sharafat Institute of Technology (SIT)</h3>
+    <p>Knowledge • Technology • Innovation • Opportunity</p>
+    <p>
+        <a href="#home">Home</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#research">Research</a>
+        <a href="#register">Join Us</a>
+    </p>
+    <p>© 2026 Sharafat Institute of Technology. All rights reserved.</p>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+const statusBox = document.getElementById("status");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+async function sendForm(formId, endpoint) {
+    const form = document.getElementById(formId);
+
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+        statusBox.textContent = "Please wait...";
+
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        try {
+            const response = await fetch(endpoint, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || "Request failed");
+            }
+
+            statusBox.textContent = result.message;
+            form.reset();
+
+        } catch (error) {
+            statusBox.textContent = error.message;
+        }
+    });
+}
+
+sendForm("registerForm", "/api/register");
+sendForm("loginForm", "/api/login");
+sendForm("paymentForm", "/api/payment-demo");
+</script>
+
+</body>
+</html>
